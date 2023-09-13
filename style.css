@@ -31,7 +31,7 @@ body {
 
 #colosseo {
     position: absolute;
-    transform-origin: right center;
+    transform-origin: center;
     top: 0;
     right: 0;
     max-height: 80%;
