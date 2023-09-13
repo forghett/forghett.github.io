@@ -14,8 +14,8 @@ body {
 #countdown {
     position: absolute;
     transform-origin: top;
+    left: 50%;
     top: 300px;
-    
     font-size: 20px;
     color: red;
     
