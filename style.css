@@ -13,7 +13,8 @@ body {
 
 #countdown {
     position: absolute;
-    top: 2px;
+    transform-origin: top;
+    top: 300px;
     
     font-size: 20px;
     color: red;
