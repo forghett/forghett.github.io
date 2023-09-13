@@ -14,9 +14,9 @@ body {
 #countdown {
     position: absolute;
     top: 20px;
-    left: 50%;
+    left: 30%;
     transform: translateX(-50%);
-    font-size: 36px;
+    font-size: 28px;
     color: red;
     
 }
@@ -32,6 +32,7 @@ body {
 
 #colosseo {
     position: absolute;
+    transform-origin: right top;
     top: 0;
     right: 0;
     max-height: 80%;
@@ -43,6 +44,7 @@ body {
     bottom: 0;
     left: 0;
     max-width: 100%;
+    scale: 60%;
     transform-origin: left bottom;
     transition: max-width 1s ease;
     animation: rotateErci 2s linear infinite; /* L'animazione dura 5 secondi e si ripete all'infinito */
