@@ -14,7 +14,14 @@ function updateCountdown() {
     document.getElementById("secondsLeft").innerHTML = secondsLeft;
   }
   
-  updateCountdown();
+  //updateCountdown();
   
-  setInterval(updateCountdown, 1000);
+  //setInterval(updateCountdown, 1000);
+  // Rimuovi la funzione updateCountdown() e il setInterval associato
+
+// Aggiungi questo codice per far partire l'animazione dell'aereo all'avvio della pagina
+window.onload = function() {
+    const plane = document.getElementById("plane");
+    plane.style.animationPlayState = "running";
+  };
   

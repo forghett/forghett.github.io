@@ -22,10 +22,17 @@ body {
   
   #plane {
     position: absolute;
-    top: 100px;
+    bottom: 0;
     left: 0;
     width: 50px;
     height: 50px;
+    animation: movePlane 10s linear infinite, rotatePlane 10s linear infinite;
+  }
+
+  #colosseo {
+    position: absolute;
+    top: 100px;
+    right: 0;
   }
   
   svg {
@@ -33,4 +40,21 @@ body {
     stroke: black;
     stroke-width: 2px;
   }
-  
+
+  @keyframes movePlane {
+    0% {
+      bottom: 0;
+    }
+    100% {
+      bottom: 100%;
+    }
+  }
+
+  @keyframes rotatePlane {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
