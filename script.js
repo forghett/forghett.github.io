@@ -12,6 +12,9 @@ function updateCountdown() {
     document.getElementById("hoursLeft").innerHTML = hoursLeft;
     document.getElementById("minutesLeft").innerHTML = minutesLeft;
     document.getElementById("secondsLeft").innerHTML = secondsLeft;
+  
+    const planePosition = Math.floor((daysLeft * 1000) / 100);
+    document.getElementById("plane").style.top = planePosition + "px";
   }
   
   updateCountdown();
