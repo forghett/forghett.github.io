@@ -13,10 +13,9 @@ body {
 
 #countdown {
     position: absolute;
-    top: 20px;
-    left: 30%;
+    top: 2px;
     
-    font-size: 28px;
+    font-size: 20px;
     color: red;
     
 }
@@ -32,7 +31,7 @@ body {
 
 #colosseo {
     position: absolute;
-    transform-origin: right top;
+    transform-origin: right center;
     top: 0;
     right: 0;
     max-height: 80%;
