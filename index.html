@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciccio is coming Rome</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Ciccio's coming Rome</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="countdown">
-        <h1>Countdown to October 13</h1>
-        <div id="countdown-timer"></div>
+  <div id="countdown">
+    <div id="title">Ciccio's coming Rome</div>
+    <div id="days">
+      <span id="daysLeft">13</span>
+      <span>giorni</span>
     </div>
-    <div class="moving-plane">
-        <!-- Place your moving plane animation here -->
+    <div id="hours">
+      <span id="hoursLeft">0</span>
+      <span>ore</span>
     </div>
+    <div id="minutes">
+      <span id="minutesLeft">0</span>
+      <span>minuti</span>
+    </div>
+    <div id="seconds">
+      <span id="secondsLeft">0</span>
+      <span>secondi</span>
+    </div>
+  </div>
+  <div id="plane">
+    <svg viewBox="0 0 50 50">
+      <path d="M 0 0 L 50 0 L 25 50 Z" stroke="black" stroke-width="2" fill="none" />
+      <path d="M 0 0 L 25 50" stroke="black" stroke-width="1" fill="none" />
+    </svg>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
