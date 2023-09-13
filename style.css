@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.countdown {
+    margin: 100px auto;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#countdown-timer {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff0000; /* Red color for the countdown */
+}
+
+.moving-plane {
+    /* Define the initial position and styles for your moving plane here */
+    /* You will use JavaScript to animate it */
+}
