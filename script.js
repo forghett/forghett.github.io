@@ -18,30 +18,7 @@ function updateCountdown() {
     }
   }
 
-  document.getElementById("days").innerHTML = days;
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("seconds").innerHTML = seconds;
-}
-
-setInterval(updateCountdown, 1000);
-
-function moveImage() {
-  let erci = document.getElementById("erci");
-  let colosseo = document.getElementById("colosseo");
-
-  let distance = colosseo.offsetLeft - erci.offsetLeft;
-  let speed = distance / (days * 24 * 60 * 60);
-
-  erci.style.left = erci.offsetLeft + speed * seconds + "px";
-
-  if (erci.offsetLeft < colosseo.offsetLeft) {
-    erci.style.transform = "rotate(180deg)";
-  } else if (erci.offsetLeft > colosseo.offsetLeft) {
-    erci.style.transform = "rotate(0deg)";
-  }
-}
-
-window.onload = function() {
-  moveImage();
-};
+  document.getElementById("days-number").innerHTML = days;
+  document.getElementById("hours-number").innerHTML = hours;
+  document.getElementById("minutes-number").innerHTML = minutes;
+  document.getElementById("seconds-number").innerHTML = seconds
