@@ -1,27 +1,47 @@
-// function updateCountdown() {
-//     const now = new Date();
-//     const date = new Date(2023, 9, 13, 0, 0, 0);
-//     const difference = date - now;
-  
-//     const daysLeft = Math.floor(difference / (1000 * 60 * 60 * 24));
-//     const hoursLeft = Math.floor((difference - (daysLeft * 24 * 60 * 60)) / (1000 * 60 * 60));
-//     const minutesLeft = Math.floor((difference - (daysLeft * 24 * 60 * 60) - (hoursLeft * 60 * 60)) / (1000 * 60));
-//     const secondsLeft = Math.floor((difference - (daysLeft * 24 * 60 * 60) - (hoursLeft * 60 * 60) - (minutesLeft * 60)) / 1000);
-  
-//     document.getElementById("daysLeft").innerHTML = daysLeft;
-//     document.getElementById("hoursLeft").innerHTML = hoursLeft;
-//     document.getElementById("minutesLeft").innerHTML = minutesLeft;
-//     document.getElementById("secondsLeft").innerHTML = secondsLeft;
-//   }
-  
-//   updateCountdown();
-  
-//   //setInterval(updateCountdown, 1000);
-//   // Rimuovi la funzione updateCountdown() e il setInterval associato
+let days = 20;
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
 
-// // Aggiungi questo codice per far partire l'animazione dell'aereo all'avvio della pagina
-// window.onload = function() {
-//     const plane = document.getElementById("plane");
-//     plane.style.animationPlayState = "running";
-//   };
-  
+function updateCountdown() {
+  seconds--;
+  if (seconds < 0) {
+    seconds = 59;
+    minutes--;
+    if (minutes < 0) {
+      minutes = 59;
+      hours--;
+      if (hours < 0) {
+        days--;
+        hours = 23;
+      }
+    }
+  }
+
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+}
+
+setInterval(updateCountdown, 1000);
+
+function moveImage() {
+  let erci = document.getElementById("erci");
+  let colosseo = document.getElementById("colosseo");
+
+  let distance = colosseo.offsetLeft - erci.offsetLeft;
+  let speed = distance / (days * 24 * 60 * 60);
+
+  erci.style.left = erci.offsetLeft + speed * seconds + "px";
+
+  if (erci.offsetLeft < colosseo.offsetLeft) {
+    erci.style.transform = "rotate(180deg)";
+  } else if (erci.offsetLeft > colosseo.offsetLeft) {
+    erci.style.transform = "rotate(0deg)";
+  }
+}
+
+window.onload = function() {
+  moveImage();
+};
