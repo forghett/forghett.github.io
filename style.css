@@ -37,6 +37,7 @@ body {
     right: 0;
     max-height: 80%;
     scale: 30%;
+    z-index: 1; /* Imposta un valore z-index inferiore per l'immagine del Colosseo */
 }
 
 #erci {
