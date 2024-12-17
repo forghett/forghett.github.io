@@ -90,7 +90,7 @@ button:hover {
 
 .image-container img {
   display: none; /* L'immagine è nascosta inizialmente */
-  width: auto;
+  width: 300px;
   height: auto;
   margin-top: 20px;
 }
@@ -209,15 +209,4 @@ button:hover {
     font-size: 0.9rem;
     padding: 6px 12px;
   }
-}
-
-#mommyImage {
-  display: none;
-  position: fixed; /* Fisso rispetto alla finestra */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centra l'immagine */
-  z-index: 9999; /* Assicurati che l'immagine stia sopra tutti gli altri contenuti */
-  width: auto;
-  height: auto;
 }
