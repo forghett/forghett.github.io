@@ -1,29 +1,66 @@
-// Data del countdown: Mezzanotte del 25 Dicembre
-const countdownDate = new Date("December 25, 2024 00:00:00").getTime();
+// Funzione per creare un fiocco di neve
+function createSnowflake() {
+  const flake = document.createElement('div');
+  flake.classList.add('flake');
+  flake.classList.add(`shape${Math.floor(Math.random() * 6) + 1}`); // Assegna una forma random
+  flake.style.left = `${Math.random() * 100}%`; // Posizione random
+  flake.style.animationDuration = `${Math.random() * 5 + 5}s`; // Durata animazione random
+  flake.style.animationDelay = `${Math.random() * 3}s`; // Ritardo animazione random
+  document.querySelector('.snow').appendChild(flake);
+}
 
-// Simula un giorno in meno all'inizio per evitare il caricamento a zero
-const now = new Date().getTime();
-let timeLeft = countdownDate - now - (24 * 60 * 60 * 1000);
+// Crea 50 fiocchi di neve
+for (let i = 0; i < 50; i++) {
+  createSnowflake();
+}
 
-// Aggiorna ogni secondo
-const countdownFunction = setInterval(() => {
-    timeLeft -= 1000;
+// Funzione per creare un motivo rosso random
+function createRandomMotif() {
+  const motif = document.createElement('div');
+  motif.classList.add('red-motif');
+  motif.style.left = `${Math.random() * 100}%`;
+  motif.style.top = `${Math.random() * 100}%`;
+  motif.style.animationDuration = `${Math.random() * 8 + 7}s`; // Durata animazione variabile
+  motif.style.animationDelay = `${Math.random() * 5}s`; // Ritardo animazione random
+  document.body.appendChild(motif);
+}
 
-    if (timeLeft > 0) {
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+// Crea 30 motivi rossi casuali
+for (let i = 0; i < 30; i++) {
+  createRandomMotif();
+}
 
-        // Aggiorna il DOM
-        document.getElementById("days").innerText = days.toString().padStart(2, '0');
-        document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-        document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-        document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
-    } else {
-        // Al termine del countdown
-        clearInterval(countdownFunction);
-        document.getElementById("countdown").style.display = "none";
-        document.getElementById("final-message").classList.remove("hidden");
-    }
-}, 1000);
+// Countdown e logica per il pulsante
+const countdownElement = document.getElementById('countdown');
+const showImageBtn = document.getElementById('showImageBtn');
+const momyImage = document.getElementById('momyImage');
+
+// Calcolo del tempo rimanente fino alla mezzanotte del 24 dicembre
+const targetDate = new Date('December 25, 2024 00:00:00').getTime();
+
+// Funzione di aggiornamento del countdown
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  // Calcola giorni, ore, minuti, secondi
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+  if (distance < 0) {
+    countdownElement.innerHTML = "Buon Natale!";
+    showImageBtn.classList.remove('hidden');
+  }
+}
+
+// Funzione per mostrare l'immagine dopo il click del bottone
+showImageBtn.addEventListener('click', () => {
+  momyImage.classList.remove('hidden');
+});
+
+// Aggiorna il countdown ogni secondo
+setInterval(updateCountdown, 1000);

@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown di Natale</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Natalizio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Contenitore principale -->
-    <div id="container">
-        <!-- Titolo -->
-        <h1 id="title">🎄 Natale sta arrivando! 🎅</h1>
 
-        <!-- Countdown -->
-        <div id="countdown">
-            <div class="time"><span id="days">00</span><div>Giorni</div></div>
-            <div class="time"><span id="hours">00</span><div>Ore</div></div>
-            <div class="time"><span id="minutes">00</span><div>Minuti</div></div>
-            <div class="time"><span id="seconds">00</span><div>Secondi</div></div>
-        </div>
-
-        <!-- Messaggio finale -->
-        <div id="final-message" class="hidden">
-            <img src="momy.png" alt="Buon Natale!">
-            <h2>Buon Natale! 🎉</h2>
-        </div>
+  <div class="container">
+    <div id="countdown" class="countdown"></div>
+    <button id="showImageBtn" class="hidden">Mostra Immagine</button>
+    <div class="image-container">
+      <img id="momyImage" src="momy.png" alt="Immagine natalizia" class="hidden">
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <div class="snow"></div>
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>

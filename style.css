@@ -1,73 +1,159 @@
-/* Font natalizio */
-@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Stili generali */
 body {
-    background: url('https://images.unsplash.com/photo-1544020140-b832b9927d51') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Mountains of Christmas', cursive;
-    color: red;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Evita lo scroll */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #1f3b59; /* Sfondo blu natalizio */
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect x='0' y='0' width='40' height='40' fill='#1f3b59'/><rect x='5' y='5' width='10' height='10' fill='#ff0000'/></svg>");
+  background-size: 100px 100px; /* Regola la dimensione del pattern */
 }
 
-/* Contenitore principale */
-#container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Motivi rossi randomizzati a tema natalizio (squadrati) */
+.red-motif {
+  position: absolute;
+  background-color: #ff0000;
+  z-index: 5;
+  opacity: 1;
+  width: 20px; /* Larghezza del motivo */
+  height: 20px; /* Altezza del motivo */
+  animation: fadeInOut 10s infinite; /* Dissolvenza senza movimento */
 }
 
-/* Titolo */
-#title {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    text-shadow: 3px 3px 5px #000;
+/* Animazione per far dissolvere e riapparire il motivo */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
-/* Countdown */
-#countdown {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    font-size: 2rem;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 15px;
-    color: red;
+/* Creazione dei fiocchi di neve */
+.snow {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
 }
 
-.time {
-    text-align: center;
+.snow .flake {
+  position: absolute;
+  background-color: #fff; /* Fiocchi di neve in bianco */
+  animation: fall 8s linear infinite;
 }
 
-.time span {
-    display: block;
-    font-size: 3rem;
-    font-weight: bold;
+/* Varietà di forme per i fiocchi */
+.snow .flake.shape1 {
+  width: 6px;
+  height: 6px;
+  animation-duration: 8s;
+  animation-delay: 0s;
+  border-radius: 50%;
 }
 
-/* Messaggio finale */
+.snow .flake.shape2 {
+  width: 8px;
+  height: 8px;
+  animation-duration: 10s;
+  animation-delay: 1s;
+  border-radius: 3px; /* Croce */
+}
+
+.snow .flake.shape3 {
+  width: 10px;
+  height: 10px;
+  animation-duration: 12s;
+  animation-delay: 2s;
+  border-radius: 0%; /* Stella con angoli più netti */
+}
+
+.snow .flake.shape4 {
+  width: 15px;
+  height: 15px;
+  animation-duration: 15s;
+  animation-delay: 3s;
+  border-radius: 50%;
+}
+
+.snow .flake.shape5 {
+  width: 4px;
+  height: 12px;
+  animation-duration: 9s;
+  animation-delay: 4s;
+  transform: rotate(45deg); /* Fiocchi di neve inclinati */
+}
+
+.snow .flake.shape6 {
+  width: 12px;
+  height: 4px;
+  animation-duration: 11s;
+  animation-delay: 5s;
+  transform: rotate(-45deg);
+}
+
+/* Creazione dei fiocchi di neve */
+@keyframes fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+/* Contenitore del sito */
+.container {
+  position: relative;
+  text-align: center;
+  z-index: 20; /* Mostra il contenuto sopra lo sfondo */
+}
+
+.countdown {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #00ff00; /* Verde brillante per il countdown */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ff4040; /* Rosso natalizio */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff6262;
+}
+
 .hidden {
-    display: none;
+  display: none;
 }
 
-#final-message img {
-    max-width: 300px;
-    margin: 20px 0;
+.image-container img {
+  width: 300px;
+  height: auto;
+  margin-top: 20px;
 }
 
-#final-message h2 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px #000;
-    color: red;
-}
+
