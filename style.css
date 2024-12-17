@@ -15,6 +15,22 @@ body {
   background-size: 100px 100px; /* Regola la dimensione del pattern */
 }
 
+/* Titolo natalizio fissato in cima e centrato */
+.title {
+  font-family: 'Caveat', cursive; /* Google Font for a handwritten effect */
+  font-size: 3.5rem;
+  color: #ff4040; /* Rosso natalizio */
+  text-shadow: 2px 2px 5px #ff0000, 0 0 25px #ff0000, 0 0 5px darkorange;
+  position: fixed;
+  top: 0; /* Posizione fissa sulla parte superiore della pagina */
+  width: 100%;
+  text-align: center;
+  padding: 20px 0; /* Spazio sopra e sotto il titolo */
+  z-index: 25; /* Assicurarsi che sia sopra il resto del contenuto */
+  left: 50%; /* Centra il titolo orizzontalmente */
+  transform: translateX(-50%); /* Sposta il titolo indietro di metà della sua larghezza per centrarlo */
+}
+
 /* Motivi rossi randomizzati a tema natalizio (squadrati) */
 .red-motif {
   position: absolute;
@@ -124,12 +140,6 @@ body {
   z-index: 20; /* Mostra il contenuto sopra lo sfondo */
 }
 
-.countdown {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #00ff00; /* Verde brillante per il countdown */
-}
 
 button {
   padding: 10px 20px;
@@ -157,3 +167,46 @@ button:hover {
 }
 
 
+/* Filastrocca sotto il titolo */
+.poem {
+  font-family: 'Caveat', cursive; /* Stessa font per coerenza */
+  font-size: 1.5rem;
+  color: #fff; /* Bianco per la filastrocca */
+  text-shadow: 1px 1px 3px #ff0000, 0 0 15px #ff0000;
+  position: fixed;
+  top: 180px; /* Posiziona la filastrocca sotto il titolo */
+  width: 100%;
+  text-align: center;
+  z-index: 20;
+  left: 50%; /* Centra la filastrocca */
+  transform: translateX(-50%); /* Sposta la filastrocca per centrarla */
+  margin-top: 10px;
+}
+
+/* Stili generali */
+.countdown {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #00ff00; /* Verde brillante per il countdown */
+  text-align: center;
+  font-family: 'Caveat', cursive; /* Font natalizio */
+  text-shadow: 2px 2px 5px #ff0000, 0 0 25px #ff0000, 0 0 5px darkorange; /* Ombra natalizia */
+  position: relative;
+  z-index: 10; /* Assicurati che il countdown sia visibile sopra gli altri elementi */
+}
+
+/* Aggiunta di simboli natalizi leggeri sopra e sotto il countdown */
+.countdown::before {
+  content: '🎁🎁🎁 '; /* Emojis di Natale sopra il countdown */
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.countdown::after {
+  content: '🎁🎁🎁'; /* Emojis di Natale sotto il countdown */
+  font-size: 2rem;
+  display: block;
+  margin-top: 10px;
+}

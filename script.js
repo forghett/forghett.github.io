@@ -36,7 +36,7 @@ const showImageBtn = document.getElementById('showImageBtn');
 const momyImage = document.getElementById('momyImage');
 
 // Calcolo del tempo rimanente fino alla mezzanotte del 24 dicembre
-const targetDate = new Date('December 25, 2024 00:00:00').getTime();
+const targetDate = new Date('December 15, 2024 00:00:00').getTime();
 
 // Funzione di aggiornamento del countdown
 function updateCountdown() {
@@ -52,7 +52,7 @@ function updateCountdown() {
   countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
   if (distance < 0) {
-    countdownElement.innerHTML = "Buon Natale!";
+    countdownElement.innerHTML = "Auguriiiiiiiiiii :) ";
     showImageBtn.classList.remove('hidden');
   }
 }
