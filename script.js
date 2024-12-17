@@ -34,9 +34,10 @@ for (let i = 0; i < 30; i++) {
 const countdownElement = document.getElementById('countdown');
 const showImageBtn = document.getElementById('showImageBtn');
 const momyImage = document.getElementById('momyImage');
+const poemElement = document.querySelector('.poem'); // Seleziona l'elemento della filastrocca
 
 // Calcolo del tempo rimanente fino alla mezzanotte del 24 dicembre
-const targetDate = new Date('December 25, 2024 00:00:00').getTime();
+const targetDate = new Date('December 15, 2024 00:00:00').getTime();
 
 // Funzione di aggiornamento del countdown
 function updateCountdown() {
@@ -51,9 +52,13 @@ function updateCountdown() {
 
   countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
+  // Quando il countdown è finito
   if (distance < 0) {
     countdownElement.innerHTML = "Auguriiiiiiiiiii :) ";
     showImageBtn.classList.remove('hidden');
+    
+    // Nasconde la filastrocca quando il countdown finisce
+    poemElement.style.display = 'none';
   }
 }
 
@@ -62,7 +67,6 @@ showImageBtn.addEventListener('click', () => {
   momyImage.style.display = 'block'; // Mostra l'immagine
   showImageBtn.style.display = 'none'; // Nasconde il pulsante
 });
-
 
 // Aggiorna il countdown ogni secondo
 setInterval(updateCountdown, 1000);
