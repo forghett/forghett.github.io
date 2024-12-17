@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <title>Ciccio's Coming Rome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown di Natale</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="background">
-        <div class="wave"></div>
-        <div id="countdown">
-            <span id="countdown-days"></span> days
-            <span id="countdown-hours"></span> hours
-            <span id="countdown-minutes"></span> minutes
-            <span id="countdown-seconds"></span> seconds
+    <div class="container">
+        <h1>🎄 Natale sta arrivando! 🎅</h1>
+        <div id="countdown" class="countdown">
+            <div><span id="days">00</span>Giorni</div>
+            <div><span id="hours">00</span>Ore</div>
+            <div><span id="minutes">00</span>Minuti</div>
+            <div><span id="seconds">00</span>Secondi</div>
         </div>
-        <div id="title">Ciccio's Coming Rome</div>
-        <img id="colosseo" src="colosseo.jpg" alt="Colosseo">
-        <img id="erci" src="erci.webp" alt="Erci">
+        <div id="christmasImage" class="hidden">
+            <img src="momy.jpg" alt="Buon Natale!">
+            <h2>Buon Natale! 🎉</h2>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
