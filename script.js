@@ -34,9 +34,10 @@ for (let i = 0; i < 30; i++) {
 const countdownElement = document.getElementById('countdown');
 const showImageBtn = document.getElementById('showImageBtn');
 const momyImage = document.getElementById('momyImage');
+const audio = document.getElementById('backgroundAudio');
 
 // Calcolo del tempo rimanente fino alla mezzanotte del 24 dicembre
-const targetDate = new Date('December 25, 2024 00:00:00').getTime();
+const targetDate = new Date('December 15, 2024 00:00:00').getTime();
 
 // Funzione di aggiornamento del countdown
 function updateCountdown() {
@@ -60,8 +61,10 @@ function updateCountdown() {
 // Funzione per mostrare l'immagine dopo il click del bottone
 showImageBtn.addEventListener('click', () => {
   momyImage.style.display = 'block'; // Mostra l'immagine
+  audio.play();
   showImageBtn.style.display = 'none'; // Nasconde il pulsante
 });
+
 
 
 // Aggiorna il countdown ogni secondo
