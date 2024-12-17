@@ -160,12 +160,13 @@ button:hover {
   display: none;
 }
 
+/* Immagine nascosta inizialmente */
 .image-container img {
+  display: none; /* Nasconde l'immagine */
   width: 300px;
   height: auto;
   margin-top: 20px;
 }
-
 
 /* Filastrocca sotto il titolo */
 .poem {

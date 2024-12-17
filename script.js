@@ -59,8 +59,10 @@ function updateCountdown() {
 
 // Funzione per mostrare l'immagine dopo il click del bottone
 showImageBtn.addEventListener('click', () => {
-  momyImage.classList.remove('hidden');
+  momyImage.style.display = 'block'; // Mostra l'immagine
+  showImageBtn.style.display = 'none'; // Nasconde il pulsante
 });
+
 
 // Aggiorna il countdown ogni secondo
 setInterval(updateCountdown, 1000);
