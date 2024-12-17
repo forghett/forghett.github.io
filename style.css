@@ -4,146 +4,87 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Evita lo scroll */
+  overflow: hidden;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  background: #1f3b59; /* Sfondo blu natalizio */
+  background: #1f3b59;
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect x='0' y='0' width='40' height='40' fill='#1f3b59'/><rect x='5' y='5' width='10' height='10' fill='#ff0000'/></svg>");
-  background-size: 100px 100px; /* Regola la dimensione del pattern */
+  background-size: 100px 100px;
 }
 
 /* Titolo natalizio fissato in cima e centrato */
 .title {
-  font-family: 'Caveat', cursive; /* Google Font for a handwritten effect */
+  font-family: 'Caveat', cursive;
   font-size: 3.5rem;
-  color: #ff4040; /* Rosso natalizio */
+  color: #ff4040;
   text-shadow: 2px 2px 5px #ff0000, 0 0 25px #ff0000, 0 0 5px darkorange;
   position: fixed;
-  top: 0; /* Posizione fissa sulla parte superiore della pagina */
+  top: 0;
   width: 100%;
   text-align: center;
-  padding: 20px 0; /* Spazio sopra e sotto il titolo */
-  z-index: 25; /* Assicurarsi che sia sopra il resto del contenuto */
-  left: 50%; /* Centra il titolo orizzontalmente */
-  transform: translateX(-50%); /* Sposta il titolo indietro di metà della sua larghezza per centrarlo */
+  padding: 20px 0;
+  z-index: 25;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* Motivi rossi randomizzati a tema natalizio (squadrati) */
-.red-motif {
-  position: absolute;
-  background-color: #ff0000;
-  z-index: 5;
-  opacity: 1;
-  width: 20px; /* Larghezza del motivo */
-  height: 20px; /* Altezza del motivo */
-  animation: fadeInOut 10s infinite; /* Dissolvenza senza movimento */
-}
-
-/* Animazione per far dissolvere e riapparire il motivo */
-@keyframes fadeInOut {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-/* Creazione dei fiocchi di neve */
-.snow {
-  position: absolute;
-  top: -10%;
-  left: 0;
+/* Filastrocca sotto il titolo */
+.poem {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px #ff0000, 0 0 15px #ff0000;
+  position: fixed;
+  top: 180px;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
+  text-align: center;
+  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+}
+
+/* Countdown con simboli natalizi */
+.countdown {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #00ff00;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  text-shadow: 2px 2px 5px #ff0000, 0 0 25px #ff0000, 0 0 5px darkorange;
+  position: relative;
   z-index: 10;
 }
 
-.snow .flake {
-  position: absolute;
-  background-color: #fff; /* Fiocchi di neve in bianco */
-  animation: fall 8s linear infinite;
+.countdown::before {
+  content: '🎁🎁🎁 ';
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
 }
 
-/* Varietà di forme per i fiocchi */
-.snow .flake.shape1 {
-  width: 6px;
-  height: 6px;
-  animation-duration: 8s;
-  animation-delay: 0s;
-  border-radius: 50%;
-}
-
-.snow .flake.shape2 {
-  width: 8px;
-  height: 8px;
-  animation-duration: 10s;
-  animation-delay: 1s;
-  border-radius: 3px; /* Croce */
-}
-
-.snow .flake.shape3 {
-  width: 10px;
-  height: 10px;
-  animation-duration: 12s;
-  animation-delay: 2s;
-  border-radius: 0%; /* Stella con angoli più netti */
-}
-
-.snow .flake.shape4 {
-  width: 15px;
-  height: 15px;
-  animation-duration: 15s;
-  animation-delay: 3s;
-  border-radius: 50%;
-}
-
-.snow .flake.shape5 {
-  width: 4px;
-  height: 12px;
-  animation-duration: 9s;
-  animation-delay: 4s;
-  transform: rotate(45deg); /* Fiocchi di neve inclinati */
-}
-
-.snow .flake.shape6 {
-  width: 12px;
-  height: 4px;
-  animation-duration: 11s;
-  animation-delay: 5s;
-  transform: rotate(-45deg);
-}
-
-/* Creazione dei fiocchi di neve */
-@keyframes fall {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(100vh);
-  }
+.countdown::after {
+  content: '🎁🎁🎁';
+  font-size: 2rem;
+  display: block;
+  margin-top: 10px;
 }
 
 /* Contenitore del sito */
 .container {
   position: relative;
   text-align: center;
-  z-index: 20; /* Mostra il contenuto sopra lo sfondo */
+  z-index: 20;
 }
 
-
+/* Pulsante */
 button {
   padding: 10px 20px;
-  background-color: #ff4040; /* Rosso natalizio */
+  background-color: #ff4040;
   border: none;
   border-radius: 5px;
   color: white;
@@ -160,54 +101,123 @@ button:hover {
   display: none;
 }
 
-/* Immagine nascosta inizialmente */
 .image-container img {
-  display: none; /* Nasconde l'immagine */
+  display: none; /* L'immagine è nascosta inizialmente */
   width: 300px;
   height: auto;
   margin-top: 20px;
 }
 
-/* Filastrocca sotto il titolo */
-.poem {
-  font-family: 'Caveat', cursive; /* Stessa font per coerenza */
-  font-size: 1.5rem;
-  color: #fff; /* Bianco per la filastrocca */
-  text-shadow: 1px 1px 3px #ff0000, 0 0 15px #ff0000;
-  position: fixed;
-  top: 180px; /* Posiziona la filastrocca sotto il titolo */
+/* Fiocchi di neve */
+.snow {
+  position: absolute;
+  top: -10%;
+  left: 0;
   width: 100%;
-  text-align: center;
-  z-index: 20;
-  left: 50%; /* Centra la filastrocca */
-  transform: translateX(-50%); /* Sposta la filastrocca per centrarla */
-  margin-top: 10px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
 }
 
-/* Stili generali */
-.countdown {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #00ff00; /* Verde brillante per il countdown */
-  text-align: center;
-  font-family: 'Caveat', cursive; /* Font natalizio */
-  text-shadow: 2px 2px 5px #ff0000, 0 0 25px #ff0000, 0 0 5px darkorange; /* Ombra natalizia */
-  position: relative;
-  z-index: 10; /* Assicurati che il countdown sia visibile sopra gli altri elementi */
+.snow .flake {
+  position: absolute;
+  background-color: #fff;
+  animation: fall 8s linear infinite;
 }
 
-/* Aggiunta di simboli natalizi leggeri sopra e sotto il countdown */
-.countdown::before {
-  content: '🎁🎁🎁 '; /* Emojis di Natale sopra il countdown */
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 10px;
+@keyframes fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
 }
 
-.countdown::after {
-  content: '🎁🎁🎁'; /* Emojis di Natale sotto il countdown */
-  font-size: 2rem;
-  display: block;
-  margin-top: 10px;
+/* Media query per ottimizzazione mobile */
+@media (max-width: 768px) {
+  /* Ridurre la dimensione del titolo su schermi più piccoli */
+  .title {
+    font-size: 2.5rem;
+    padding: 10px 0;
+  }
+
+  /* Ridurre la dimensione della filastrocca */
+  .poem {
+    font-size: 1.2rem;
+    top: 160px;
+  }
+
+  /* Ridurre la dimensione del countdown */
+  .countdown {
+    font-size: 2rem;
+  }
+
+  /* Ridurre la dimensione delle icone natalizie sopra e sotto il countdown */
+  .countdown::before,
+  .countdown::after {
+    font-size: 1.5rem;
+  }
+
+  /* Rendi il bottone e l'immagine un po' più piccoli */
+  .image-container img {
+    width: 250px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  /* Ridurre le dimensioni della font per i fiocchi di neve su mobile */
+  .snow .flake.shape1,
+  .snow .flake.shape2,
+  .snow .flake.shape3,
+  .snow .flake.shape4,
+  .snow .flake.shape5,
+  .snow .flake.shape6 {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+/* Media query per schermi piccoli (smartphone molto piccoli) */
+@media (max-width: 480px) {
+  /* Titolo ancora più piccolo su schermi piccoli */
+  .title {
+    font-size: 1.8rem;
+    padding: 5px 0;
+  }
+
+  /* Ancora più piccolo per la filastrocca */
+  .poem {
+    font-size: 1rem;
+    top: 140px;
+  }
+
+  /* Countdown ridotto */
+  .countdown {
+    font-size: 1.5rem;
+  }
+
+  /* Ulteriore riduzione delle icone natalizie */
+  .countdown::before,
+  .countdown::after {
+    font-size: 1.2rem;
+  }
+
+  /* Immagine e bottone più piccoli */
+  .image-container img {
+    width: 200px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
 }
