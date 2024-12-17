@@ -1,5 +1,5 @@
-/* Importa un font natalizio */
-@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+/* Font natalizio */
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
 
 * {
     margin: 0;
@@ -7,14 +7,20 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Mountains of Christmas', cursive;
+body {
     background: url('https://images.unsplash.com/photo-1544020140-b832b9927d51') no-repeat center center fixed;
     background-size: cover;
+    font-family: 'Mountains of Christmas', cursive;
     color: red;
     text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenitore principale */
+#container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,10 +40,9 @@ html, body {
     justify-content: center;
     gap: 30px;
     font-size: 2rem;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 10px #000;
     color: red;
 }
 
@@ -58,12 +63,11 @@ html, body {
 
 #final-message img {
     max-width: 300px;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 #final-message h2 {
-    font-size: 3.5rem;
-    margin-top: 10px;
-    color: red;
+    font-size: 3rem;
     text-shadow: 2px 2px 4px #000;
+    color: red;
 }
